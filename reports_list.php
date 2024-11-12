@@ -85,7 +85,9 @@ $allUsers = array();
                         <?php
 
 $id = $_SESSION["id"];
-$sql = ($_SESSION["role"]=="admin") ? "SELECT * FROM reports" : "SELECT * FROM reports WHERE issuer_id=$id";
+$sql = ($_SESSION["role"]=="admin") ?
+    "SELECT reports.*, users.username FROM reports JOIN users ON users.id = reports.issuer_id;" :
+    "SELECT reports.*, users.username FROM reports JOIN users ON users.id = reports.issuer_id WHERE reports.issuer_id = $id;";
 $result = $conn->query($sql);
 
 // function test_perms($var)
@@ -96,7 +98,7 @@ $result = $conn->query($sql);
 while($row = $result->fetch_assoc()) {
 
     echo "<tr>";
-    echo "<td>{$row["issuer_id"]}</td>";
+    echo "<td>{$row["username"]}</td>";
     if (empty($row["subject"])): ?>
         <td>N/A</td>
     <?php else: ?>

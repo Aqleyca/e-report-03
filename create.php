@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (!$isDuplicate && empty($emailErrorMassage) && empty($passwordErrorMassage) && empty($usernameErrorMassage)) {
         $hashedPassword = sha1($password); // Ideally, use password_hash() for stronger security
 
-        $sql = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO users (username, email, pw_hash, role) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssss", $username, $email, $hashedPassword, $role);
 
