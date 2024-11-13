@@ -9,7 +9,7 @@ include './helper_php/db_init.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = trim($_POST["username"]) ?? "";
     $email = trim($_POST["email"]) ?? "";
-    $password = trim($_POST["password"]) ?? "";
+    $password = sha1(trim($_POST["password"])) ?? "";
     $emailErrorMassage = "";
     $passwordErrorMassage = "";
     $usernameErrorMassage = "";
