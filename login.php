@@ -12,8 +12,7 @@ require_once "./helper_php/login_post.php";
       * {
         font-family: "Oxanium", sans-serif;
       }
-    </style>
-    <link rel="shortcut icon" href="./assets/LAPOR_SMALL.png" type="image/x-icon">
+    </style> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
   </head>
